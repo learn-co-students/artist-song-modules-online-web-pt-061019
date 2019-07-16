@@ -2,9 +2,9 @@ require 'pry'
 
 class Song
   include Paramable
-  include Findable
   extend Memorable::ClassMethods
   include Memorable::InstanceMethods
+  extend Findable
   attr_accessor :name
   attr_reader :artist
 
@@ -14,9 +14,9 @@ class Song
     super
   end
 
-  def self.find_by_name(name)
-    @@songs.detect{|a| a.name == name}
-  end
+  # def self.find_by_name(name)
+  #   @@songs.detect{|a| a.name == name}
+  # end
 
   def self.all
     @@songs
